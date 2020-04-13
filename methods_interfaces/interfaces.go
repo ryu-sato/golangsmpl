@@ -45,6 +45,15 @@ func main() {
 	k = &T{"hellohello"}
 	describe(k)
 	k.M()
+	
+	var l interface{}
+	describe2(l)
+	
+	l = 42
+	describe2(l)
+	
+	l = "hello"
+	describe2(l)
 }
 
 type MyFloat float64
@@ -97,5 +106,9 @@ func (f F) M() {
 }
 
 func describe(i I) {
+	fmt.Printf("(%v, %T)\n", i, i)
+}
+
+func describe2(i interface{}) {
 	fmt.Printf("(%v, %T)\n", i, i)
 }
